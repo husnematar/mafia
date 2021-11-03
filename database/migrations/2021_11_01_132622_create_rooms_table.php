@@ -8,33 +8,25 @@ class CreateRoomsTable extends Migration
 {
     /**
      * Run the migrations.
-     *
      * @return void
      */
     public function up()
     {
-        Schema::create('room', function (Blueprint $table) {
+        Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->index();
-            $table->foreignId('game_id')->index();
             $table->string('name');
             $table->boolean('private')->default(false);
-            $table->softDeletes();
-
-
-
-
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     *
      * @return void
      */
     public function down()
     {
-        Schema::dropIfExists('room');
+        Schema::dropIfExists('rooms');
     }
 }

@@ -17,7 +17,6 @@ class CreateGamesTable extends Migration
             $table->id();
             $table->foreignId('room_id');
             $table->integer('total_size');
-            $table->integer('min_player')->default(4);
             $table->integer('mafias')->default(1);
             $table->integer('doctors')->default(0);
             $table->integer('sheriffs')->default(0);
