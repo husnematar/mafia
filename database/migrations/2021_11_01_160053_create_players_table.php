@@ -16,8 +16,7 @@ class CreatePlayersTable extends Migration
             $table->id();
             $table->foreignId('user_id')->index();
             $table->foreignId('game_id')->index();
-            $table->integer('role_id');
-
+            $table->foreignId('character_id')->index();
             $table->timestamps();
         });
     }
